@@ -1,0 +1,67 @@
+@import '../variables.scss';
+.ant-input-affix-wrapper, .ant-input  {
+    &:hover {
+        border-color: $primary_color !important;
+    }
+    &:focus {
+        border-color: $primary_color !important;
+        box-shadow: none !important;
+    }
+}
+.ant-input-affix-wrapper-focused {
+    border-color: $primary_color !important;
+}
+
+.ant-tabs-tab-btn {
+    color: $primary_color !important;
+    font-weight: bold;
+}
+
+.ant-tabs-ink-bar {
+    background: $primary_color !important;
+}
+
+.ant-btn {
+    transition: all 0.2s ease-in;
+    &:hover {
+        border: 1px solid $primary_color !important;
+        color: $primary_color !important;
+        transform: scale(1.1,1.1);
+    }
+}
+
+.ant-btn-primary {
+    background-color: $primary_color !important;
+    color: white;
+    &:hover {
+        color: white !important;
+    }
+}
+
+.ant-form-item-explain-error {
+    color: #FE6A6A;
+}
+
+.ant-checkbox-wrapper {
+    width: 100%;
+}
+
+.ant-dropdown-menu {
+    display: flex;
+    flex-direction: column;
+}
+
+.ant-dropdown-trigger {
+    cursor: pointer;
+}
+
+.ant-image {
+    border-radius: 100%;
+    .ant-image-img {
+        border-radius: 100%;
+        border: 1px solid $primary_color;
+    }
+    .ant-image-mask {
+        border-radius: 100%;
+    }
+}

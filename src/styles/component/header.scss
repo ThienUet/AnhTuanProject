@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap');
+.header {
+        .header-head {
+            box-sizing: border-box !important;
+            height: 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            ul {
+                margin: 0;
+                padding: 0;
+            }
+            .header-list-logo {
+                width: 30%;
+                height: 100%;
+                .header-item {
+                    height: 100%;
+                a {
+                    font-size: 16px;
+                    height: 100%;
+                    align-items: center;
+                    display: flex;
+                    justify-content: left;
+                    .logo {
+                        height: 100%;
+                        font-size: 30px;
+                        margin-right: 1px;
+                    }
+                    .header-sig {
+                        height: 100%;
+                        font-style: italic;
+                        font-family: 'Sedgwick Ave Display', cursive;
+                        padding-top: 17px;
+                    }
+                }
+                }
+            }
+            .header-list-element {
+                height: 100%;
+                justify-content: right;
+                align-items: center;
+                .header-item {
+                    display: flex;
+                    align-items: center;
+                    height: 100%;
+                    border-left: 0.5px solid $border_color;
+                    padding: 10px;
+                    &:last-child {
+                        border-right: 0.5px solid $border_color;
+                    }
+                    .element {
+                        width: 100%;
+                        position: relative;
+                        .item-in-cart {
+                            position: absolute;
+                            top: -45%;
+                            right: -48%;
+                            color: white;
+                            background-color: red;
+                            border-radius: 5px;
+                            font-size: 11px;
+                            padding: 0px 3px;
+                        }
+                    }
+                }
+            }
+        }
+        .header-component {
+            background-color: $primary_color;
+            .component-list {
+                .component-item {
+                    a {
+                        color: white;
+                        padding: 10px;
+                        margin-left: 20px;
+                        display: block;
+                        text-transform: uppercase;
+                        &:first-child {
+                            margin: 0;
+                        }
+                        &:hover {
+                            color: black;
+                        }
+                    }
+                }
+            }
+        }
+
+}

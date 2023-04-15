@@ -1,0 +1,54 @@
+@import '../variables.scss';
+.profile-page {
+    margin: 0 auto;
+    max-width: 1200px;
+    .profile {
+        display: flex;
+        .left-profile {
+            padding: 10px;
+            width: 30%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .avatar {
+                width: 60%;
+                .upload-image {
+                    text-align: center;
+                    margin-top: 5px;
+                    button {
+                        box-sizing: border-box;
+                        i {
+                            margin-right: 5px;
+                        }
+                    }
+                }
+            }
+            .info-status {
+                .item {
+                    margin: 10px 0;
+                    .item-name {
+                        width: 100%;
+                        text-align: center;
+                    }
+                    .item-role {
+                        font-weight: bold;
+                        span {
+                            color: red;
+                        }
+                    }
+                    .item-status {
+                        font-weight: bold;
+                        span {
+                            color: $status;
+                        }
+                    }
+                }
+            }
+    }
+    .right-profile {
+        width: 70%;
+        padding: 10px;
+
+    }
+    }
+}

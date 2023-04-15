@@ -1,0 +1,24 @@
+.nav-left {
+    width: 300px;
+    position: relative;
+    .left-menu {
+        display: flex;
+        flex-direction: column;
+        border-radius: 0 0px 10px 0;
+        box-shadow: 5px 5px 5px gray;
+        .ant-menu-submenu {
+            .ant-menu {
+                flex-direction: column;
+            }
+        }
+    }
+    .collapse-left, .collapse-right {
+        position: absolute;
+        display: block;
+        padding: 5px;
+        cursor: pointer;
+        border-radius: 0 0 10px 0;
+        background-color: white;
+        box-shadow: 2px 2px 5px gray;
+    }
+}

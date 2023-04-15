@@ -1,0 +1,112 @@
+.log-res-table {
+    width: 100%;
+    height: 100%;
+    background-image: url('/static/banner/background-login.jpg');
+    background-attachment: fixed;
+    background-repeat: repeat;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+    &::before {
+        background-color: rgba(0, 0, 0, 0.6); 
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 2;
+    }
+    .tabs-log-res {
+        z-index: 3;
+        border-radius: 10px;
+        backdrop-filter: blur(3px);
+        -webkit-backdrop-filter: blur(3px);
+        background-color: rgba(223, 222, 237, 0.4);
+        width: 500px;
+        position: absolute;
+        top: 5%;
+        left: 35%;
+        .mix-form {
+            form {
+                max-height: 470px;
+                overflow: scroll;
+                overflow-x: hidden;
+                &::-webkit-scrollbar {
+                    width: 3px;
+                }
+            
+                &::-webkit-scrollbar-track {
+                    // box-shadow: inset 0 0 5px black; 
+                    display: none;
+                }
+            
+                &::-webkit-scrollbar-thumb {
+                    background-color: $primary_color;
+                    border-radius: 10px;
+                }
+                .register-intro {
+                    margin-bottom: 20px;
+                    label {
+                        width: 100%;
+                        text-align: center;
+                        font-size: large;
+                        color: #98F1F7;
+                        font-weight: bold;
+                    }
+                }
+                .form-group {
+                    display: flex;
+                    justify-content: space-between;
+                    .ant-form-item {
+                        width: 49%;
+                    }
+                }
+                .ant-form-item {
+                    .ant-row {
+                        .ant-col {
+                            label {
+                                font-weight: bold !important;
+                                font-size: 15px;
+                            }
+                        }
+                    }
+                }
+                .form-login-option {
+                    .option {
+                        text-align: right;
+                        font-style: italic;
+                        a {
+                            color: #FE6A6A;
+                            font-weight: bold !important;
+                        }
+                    }
+                    .btn-login {
+                        text-align: center;
+                        margin-top: 10px;
+                        margin-bottom: 10px;
+                    }
+                    .notify {
+                        label{
+                            width: 100%;
+                            text-align: right;
+                            opacity: 0.8;
+                            font-style: italic;
+                            font-size: 12px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.ant-form-item {
+    margin-bottom: 10px;
+}
+
+.ant-picker {
+    width: 100%;
+}
+.alert-pop-over {
+    display: block;
+    color: red;
+}
