@@ -67,6 +67,7 @@
         }
         .header-component {
             background-color: $primary_color;
+            border-radius: 0 0 10px 10px;
             .component-list {
                 .component-item {
                     a {

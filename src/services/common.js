@@ -6,3 +6,5 @@ export const register = async(body) => await axios.post('/api/register', body);
 
 // GET USER
 export const getUser = async(body) => await axios.get('/api/my-info').then(({data}) => data || null);
+// UPDATE_USER 
+export const updateUser = async(body) => await axios.post('/api/update-user', body);

@@ -2,6 +2,8 @@ import { DatePicker, Form, Input, Select, Button, Checkbox, notification, Popove
 import React, { useState } from 'react'
 import { register } from '@/services/common';
 import { useRouter } from 'next/router';
+import moment from 'moment';
+moment.locale('vi');
 const genderOptions = [
     {label: 'Nam', value: 'Male'},
     {label: 'Nữ', value: 'Female'}

@@ -2,29 +2,8 @@ import React from 'react';
 import { Image, Button, Tabs } from 'antd';
 import { DownOutlined, UpOutlined } from '@ant-design/icons';
 import moment from 'moment';
-
-const items = [
-  {
-    key: '1',
-    label: `Xem thông tin cá nhân`,
-    children: 'Xem thông tin cá nhân',
-  },
-  {
-    key: '2',
-    label: `Chỉnh sửa thông tin cá nhân`,
-    children: 'Chỉnh sửa thông tin cá nhân',
-  },
-  {
-    key: '3',
-    label: `Lịch sử thanh toán`,
-    children: 'Lịch sử thanh toán',
-  },
-  {
-    key: '4',
-    label: `Lịch sử mua hàng`,
-    children: 'Lịch sử mua hàng',
-  },
-]
+import ViewProfile from './ViewProfile';
+import UpdateUserInfo from './UpdateUserInfo';
 const convertToVn = (value) => {
   if (value === 'admin') {
     return 'Quản trị viên';
@@ -41,7 +20,29 @@ const convertStatusToString = (status) => {
 }
 export default function MainProfilePage(props) {
   const {user} = props;
-  console.log(user);
+  const {userRefetch} = props;
+  const items = [
+    {
+      key: '1',
+      label: `Xem thông tin cá nhân`,
+      children: <ViewProfile user={user} userRefetch={userRefetch}/>,
+    },
+    {
+      key: '2',
+      label: `Chỉnh sửa thông tin cá nhân`,
+      children: <UpdateUserInfo user={user} userRefetch={userRefetch} />,
+    },
+    {
+      key: '3',
+      label: `Lịch sử thanh toán`,
+      children: 'Lịch sử thanh toán',
+    },
+    {
+      key: '4',
+      label: `Lịch sử mua hàng`,
+      children: 'Lịch sử mua hàng',
+    },
+  ]
   return (
     <div className='profile'>
       <div className='left-profile'>
@@ -71,7 +72,7 @@ export default function MainProfilePage(props) {
         </div>
       </div>
       <div className='right-profile'>
-        <Tabs  items={items}/>
+        <Tabs  items={items} />
       </div>
     </div>
   )

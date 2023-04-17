@@ -15,7 +15,7 @@ const HeaderItem = {
     {label: '', plus: <i className="fa-solid fa-cart-shopping" style={{color: '#35c0c5'}}/>, link: '#', cart: true}
   ],
   component: [
-    {label: 'Trang Chủ', link: '#'},
+    {label: 'Trang Chủ', link: '/'},
     {label: 'Giới thiệu', link: "#"},
     {label: 'Sản phẩm', link: "#", dropDown: true},
     {label: 'Tin tức', link: "#"},
@@ -51,7 +51,6 @@ const itemsUser = {
 
 export default function HeaderHome(props) {
   const {user} = props;
-  console.log(user);
   if (user) {
     HeaderItem.head.splice(1, 1, {label: '', plus: <Avatar size="small" icon={<UserOutlined />} />, link: '#', dropDown: true});
   }
@@ -60,7 +59,7 @@ export default function HeaderHome(props) {
       <div className='header-head'>
         <ul className='header-list-logo'>
           <li className='header-item'>
-          <Link href={'#'}> 
+          <Link href={'/'}> 
               <div className='logo'>
                 {HeaderItem.content.content}
               </div>

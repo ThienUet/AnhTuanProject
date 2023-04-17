@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap');
+@import '../variables.scss';
+.footer {
+    margin-top: 20px;
+    padding: 20px;
+    color: white;
+    background-color: #5F5F5F;
+    border-radius: 20px 20px 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .footer-list {
+        .footer-item {
+            width: calc(25% - 10px);
+            margin-right: 10px;
+            .footer-item-list {
+                flex-direction: column;
+                .item {
+                    margin-bottom: 10px;
+                    &:first-child {
+                        .about-title {
+                            font-size: 25px;
+                        }
+                    }
+                    .shop-main-name {
+                        font-size: 35px;
+                        color: $primary_color;
+                    }
+                    .shop-main-small {
+                        font-family: 'Sedgwick Ave Display', cursive;
+                        color: $primary_color;
+                    }
+                    .shop-address, .shop-phone, .shop-email {
+                        font-size: 13px;
+                        color: white !important;
+                        i {
+                            margin-right: 5px;
+                            color: $primary_color;
+                        }
+                    }
+                    .link-about {
+                        color: white;
+                        transition: padding-left ease 0.1s;
+                        font-size: 13px;
+                        &:hover {
+                            padding-left: 10px;
+                            color: $primary_color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .break-footer {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        content: '';
+        width: 80%;
+        border-top: 1px solid #BEFFED;
+    }
+}

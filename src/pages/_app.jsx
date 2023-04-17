@@ -6,12 +6,13 @@ import { useUser } from '@/libs/auth-service';
 import { useEffect, useState } from 'react';
 import { Hydrate, QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Router } from 'next/router';
-import { ConfigProvider } from 'antd';
+import { ConfigProvider, Spin } from 'antd';
 import Head from 'next/head';
+import { LoadingOutlined } from '@ant-design/icons';
 
 const LayoutApp = ({ Component, ...rest}) => {
-  const {data: user, refetch} = useUser();
-  return <Component {...rest} user={user} userRefetch={refetch} />
+  const {data: user, refetch, isLoading} = useUser();
+  return <Component {...rest} isLoading={isLoading} user={user} userRefetch={refetch} />
 }
 
 export default function App({ Component, pageProps }) {
@@ -40,7 +41,7 @@ export default function App({ Component, pageProps }) {
         <ConfigProvider>
           {
             loading ?
-            <div>aaaa</div>
+            <Spin size='large' indicator={<LoadingOutlined />} />
             :
             <LayoutApp {...pageProps} Component={Component} />
           }
