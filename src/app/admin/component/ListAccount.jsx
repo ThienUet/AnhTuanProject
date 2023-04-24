@@ -1,9 +1,17 @@
 import React from 'react'
-
+import { useUserList } from '@/query/common'
+import { Spinner, Button } from 'react-bootstrap';
+import { LoadingOutlined, ReloadOutlined } from '@ant-design/icons';
 export default function ListAccount() {
+  const {data: listUser, isLoading: loading, refetch} = useUserList();
   return (
     <div className='list-account'>
       <label>Danh sách người dùng</label>
+      <div className='refresh-list-user'>
+        <Button onClick={() => refetch()}>
+          <ReloadOutlined />
+        </Button>
+      </div>
       <table className='table'>
         <thead>
           <tr>
@@ -15,13 +23,20 @@ export default function ListAccount() {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>Nguyễn Văn A</td>
-            <td>Xóm Liều - Thôn Say Rượu</td>
-            <td>Người dùng</td>
-            <td>...</td>
-          </tr>
+          {
+            loading ? <Spinner size='large' indicator={<LoadingOutlined />} /> :
+            listUser?.map((user, index) => {
+             return (
+              <tr key={user._id}>
+                <td>{index + 1}</td>
+                <td>{user?.full_name}</td>
+                <td>{user?.address}</td>
+                <td>{user?.role}</td>
+                <td>...</td>
+              </tr>
+             )
+            })
+          }
         </tbody>
       </table>
     </div>

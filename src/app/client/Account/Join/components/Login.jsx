@@ -7,9 +7,13 @@ import React, {useState} from 'react';
 export default function Login() {
     const [loginForm] = Form.useForm();
     const [loading, setLoading] = useState(false);
-    const callBackResult = (result) => {
+    const callBackResult = (result, user) => {
         if (result) {
-            window.location.replace('/');
+            if (user?.role === 'admin' || user?.role === 'sub-admin') {
+                window.location.replace('/admin');
+            } else {
+                window.location.replace('/');
+            }
         } else {
             notification.error({message: 'Đăng nhập thất bại !'})
         }
@@ -25,7 +29,7 @@ export default function Login() {
             if (data.token) {
                 authenticateUser(data.token);
                 setLoading(false);
-                callBackResult(!!data.token);
+                callBackResult(!!data.token, data.user);
             } 
         }).catch(err => {
             console.log(err);

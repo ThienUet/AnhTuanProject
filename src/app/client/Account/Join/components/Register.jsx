@@ -85,8 +85,22 @@ export default function Register() {
                 <Form.Item name={'password'} label='Mật khẩu' rules={[{required: true, message: "Không được để trống !"}]}>
                     <Input.Password placeholder='Nhập mật khẩu của bạn'/>
                 </Form.Item>
-                <Form.Item name={'re_password'} label='Nhập lại mật khẩu' rules={[{required: true, message: "Không được để trống !"}]}>
-                    <Input placeholder='Nhập lại mật khẩu của bạn'/>
+                <Form.Item name={'re_password'} label='Nhập lại mật khẩu' rules={[
+                        {
+                          validator: (_, value) => {
+                            if (value) {
+                              if (value !== registerForm.getFieldsValue().password) {
+                                return Promise.reject(new Error('Không trùng mật khẩu !'));
+                              } else {
+                                return Promise.resolve();
+                              }
+                            } else {
+                              return Promise.reject(new Error('Không được để trống'));
+                            }
+                          },
+                        },
+                 ]}>
+                    <Input.Password placeholder='Nhập lại mật khẩu của bạn'/>
                 </Form.Item>
                 <div className='form-login-option'>
                     <div className='option'>

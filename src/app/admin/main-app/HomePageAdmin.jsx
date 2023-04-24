@@ -8,6 +8,7 @@ import ListProduct from '../component/ListProduct';
 import AddCategory from '../component/AddCategory';
 import ListCategory from '../component/ListCategory';
 export default function HomePageAdmin(props) {
+  const {user} = props;
   const [currentPage, setCurrentPage] = useState('view-list-acc');
   return (
     <div className='admin-home'>
@@ -17,16 +18,16 @@ export default function HomePageAdmin(props) {
           <div className='right-page'>
             {
               currentPage === 'create-acc' ?
-              <AddAccount /> :
+              <AddAccount user={user}/> :
               currentPage === 'view-list-acc' ?
-              <ListAccount /> :
+              <ListAccount user={user}/> :
               currentPage === 'create-product' ?
-              <AddProduct /> :
+              <AddProduct user={user}/> :
               currentPage === 'view-list-product' ?
-              <ListProduct /> :
+              <ListProduct user={user}/> :
               currentPage === 'create-category' ?
-              <AddCategory /> :
-              <ListCategory />
+              <AddCategory user={user}/> :
+              <ListCategory user={user}/>
             }
           </div>
         </div>

@@ -2,8 +2,35 @@
     .main {
         display: flex;
         .right-page {
-            margin-top: 20px;
-            margin-left: 20px;
+            margin: 0 auto;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            .admin-add-account {
+                width: 700px;
+                form {
+                    .register-intro{
+                        font-size: 20px;
+                        font-weight: bold;
+                        label {
+                            width: 100%;
+                            text-align: center;
+                        }
+                    }
+                    .form-login-option {
+                        .btn-login {
+                            text-align: center;
+                        }
+                        .notify {
+                            label {
+                                width: 100%;
+                                opacity: 0.8;
+                                font-style: italic;
+                                text-align: right;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }
