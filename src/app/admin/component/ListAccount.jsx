@@ -7,11 +7,6 @@ export default function ListAccount() {
   return (
     <div className='list-account'>
       <label>Danh sách người dùng</label>
-      <div className='refresh-list-user'>
-        <Button onClick={() => refetch()}>
-          <ReloadOutlined />
-        </Button>
-      </div>
       <table className='table'>
         <thead>
           <tr>
@@ -29,10 +24,15 @@ export default function ListAccount() {
              return (
               <tr key={user._id}>
                 <td>{index + 1}</td>
-                <td>{user?.full_name}</td>
+                <td>{user?.full_name}</td>        
                 <td>{user?.address}</td>
                 <td>{user?.role}</td>
-                <td>...</td>
+                <td>
+                  <Button className='btn-primary-local'><i className="fa-solid fa-circle-info" /></Button>
+                  <Button className='btn-success-local'><i className="fa-regular fa-pen-to-square" /></Button>
+                  <Button className='btn-warning-local'><i className="fa-solid fa-user-slash" /></Button>
+                  <Button className='btn-danger-local'><i className="fa-solid fa-trash" /></Button>
+                </td>
               </tr>
              )
             })

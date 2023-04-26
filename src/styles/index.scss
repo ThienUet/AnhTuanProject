@@ -81,3 +81,28 @@ img {
 .tabs-main {
     padding: 20px;
 }
+.btn-success-local,
+.btn-warning-local,
+.btn-danger-local,
+.btn-primary-local {
+    color: white;
+    border: none;
+    transition: all ease 0.1s;
+    &:hover {
+        transform: scale(1.1,1.1);
+    }
+}
+
+.btn-primary-local {
+    background-color: $primary_color;
+}
+
+.btn-success-local {
+    background-color: $success_color;
+}
+.btn-warning-local {
+    background-color: $warning_color;
+}
+.btn-danger-local {
+    background-color: $danger_color;
+}
