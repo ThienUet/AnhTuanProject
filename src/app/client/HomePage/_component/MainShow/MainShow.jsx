@@ -1,7 +1,7 @@
-import CustomImage from '@/components/CustomImage/Image'
-import Link from 'next/link'
-import React from 'react'
-import { Button, Image } from 'antd'
+import CustomImage from '@/components/CustomImage/Image';
+import Link from 'next/link';
+import React from 'react';
+import { Button, Image } from 'antd';
 export default function MainShow() {
   return (
     <div className='main-show'>
