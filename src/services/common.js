@@ -10,3 +10,5 @@ export const getUser = async(body) => await axios.get('/api/my-info').then(({dat
 export const updateUser = async(body) => await axios.post('/api/update-user', body);
 // GET LIST USER
 export const getListUser = async(body) => await axios.get('/api/users').then(({data}) => data || null);
+
+export const getDataTest = (body) => axios.post('/api/test-route', body).then(({data}) => data || null);
